@@ -27,3 +27,6 @@
     - .git版本库中有stage的暂存区，会为项目自动创建第一个分支`master`，以及指向第一个分支的指针`HEAD`
 3. `git add`是将工作区文件的改动提交至暂存区（stage），`git commit`将暂存区的文件提交至版本库
 4. 每次文件改动如果不用`git add`提交至暂存区，就不会被`git commti`提交至版本库
+#### 撤销修改
+- `git checkout -- filename`|| `git restore filename`撤销工作区未提交文件的修改
+- `git restore --stage filename`撤销已经提交至暂存区的文件修改，回到add之前的状态
