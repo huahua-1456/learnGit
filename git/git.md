@@ -40,3 +40,5 @@
     ssh-keygen -t rsa -C "email.com"
 ```
 3. 将.ssh文件夹下的公私文件（id_rsa.pub）内容添加至github账号setting-->ssh and GpG keys
+4. 连接github远程仓库
+    - 新建github仓库 create repository
