@@ -42,3 +42,7 @@
 3. 将.ssh文件夹下的公私文件（id_rsa.pub）内容添加至github账号setting-->ssh and GpG keys
 4. 连接github远程仓库
     - 新建github仓库 create repository
+    - 首次连接远程仓库时需要进行ssh指纹信息验证
+        - 本地gitbush输入命令`ssh -T git@github.com`，输入yes
+    - 关联远程仓库`git remote add origin git@server-path/repository-name.git`
+    - 关联成功后首次使用`git push -u origin master`将本地文件添加至远程库
