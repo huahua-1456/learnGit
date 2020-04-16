@@ -20,3 +20,10 @@
     - 如果命令行窗口暂时未关闭，可以找到想返回版本的commit id   
     通过命令`git reset --hard commit id`,id只需要前几位就可以了
     - 如果隔天想返回版本，可以通过`git reflog`查看使用的历史命令来查找commit id
+#### 工作区和缓存区
+1. 工作区（working directory）
+    - 自己项目所创建的文件目录即为工作区
+2. 缓存区 || 暂存区
+    - .git版本库中有stage的暂存区，会为项目自动创建第一个分支`master`，以及指向第一个分支的指针`HEAD`
+3. `git add`是将工作区文件的改动提交至暂存区（stage），`git commit`将暂存区的文件提交至版本库
+4. 每次文件改动如果不用`git add`提交至暂存区，就不会被`git commti`提交至版本库
