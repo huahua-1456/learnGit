@@ -16,7 +16,7 @@
     - 如果嫌日志信息过多，可以添加参数`git log --pretty=oneline`
 - `git reset --hard HEAD^`命令可以将文件回退至上个版本
     - HEAD表示当前版本，后跟^表示上个版本，如果回退版本较多，可使用HEAD^~100
-    ### 回退之后如何返回
+    ##### 回退之后如何返回
     - 如果命令行窗口暂时未关闭，可以找到想返回版本的commit id   
     通过命令`git reset --hard commit id`,id只需要前几位就可以了
     - 如果隔天想返回版本，可以通过`git reflog`查看使用的历史命令来查找commit id
