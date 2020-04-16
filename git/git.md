@@ -30,3 +30,13 @@
 #### 撤销修改
 - `git checkout -- filename`|| `git restore filename`撤销工作区未提交文件的修改
 - `git restore --stage filename`撤销已经提交至暂存区的文件修改，回到add之前的状态
+#### 删除文件
+- `git rm`命令用于删除文件,-f参数可强制删除文件
+- 被删除的文件如果已经提交至版本库，则删除后可以从版本库进行还原
+#### 远程仓库
+1. 注册github账号
+2. 本地电脑创建.ssh文件夹
+```js
+    ssh-keygen -t rsa -C "email.com"
+```
+3. 将.ssh文件夹下的公私文件（id_rsa.pub）内容添加至github账号setting-->ssh and GpG keys
