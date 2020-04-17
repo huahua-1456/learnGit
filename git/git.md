@@ -45,9 +45,7 @@
     - 首次连接远程仓库时需要进行ssh指纹信息验证
         - 本地gitbush输入命令`ssh -T git@github.com`，输入yes
     - 关联远程仓库`git remote add origin git@server-path/repository-name.git`
-<<<<<<< HEAD
-    - 关联成功后首次使用`git push -u origin master`将本地文件添加至远程库2
-=======
+    - 关联成功后首次使用`git push -u origin master`将本地文件添加至远程库
     - 关联成功后首次使用`git push -u origin master`将本地文件添加至远程库
     - [push相关问题解决](https://blog.csdn.net/huashao888/article/details/105564282)
 5. 从远程仓库clone项目
@@ -64,7 +62,29 @@
     - `git checkout <branchName> || git switch <branchName>(new)`用于切换分支，后者是新增方法
     - `git merge <branchName>`用于合并分支，合并到当前分支`branchName`为被合并分支
     - `git branch -d <branchName>`用于删除分支，分支被合并后可直接删除无用分支
+    - `git branch -D <branchName>`用于强行删除未合并的分支
     *git鼓励大量使用分支（branch）*
 2. 分支合并冲突
     - 当不同分支对同一个文件做了修改，且指针相同时，会出现冲突
->>>>>>> test
+    - 需要手动修改文件后再提提交后可修复冲突
+    - `git log --graph --pretty=oneline --abbrev-commit`用于查看分支合并情况
+3. 分支管理原则
+    - `git merge --on-off -m "close fasr forward mode"`
+    - 分支合并时，一般情况下git会使用fast forward模式，删除分支后丢失分支信息
+    - `--on-off`参数可强制关闭fast forward模式，merge时创建新的commit，保留分支信息
+    - 由于合并后会创建新的commit，所以应加上`-m "description"`参数
+    - 分支策略
+        - `master`分支应该是非常稳定的，只用于发布新版本，不能在上面干活
+        - 干活一般在dev分支上面，完成后合并至master分支
+4. BUG修复
+    - 修复BUG时，新开分支，修复完成后将新开分支合并至主分支。
+    - 如果当前有未完成工作，可以先“储藏”当前分支工作区内容`git stash`
+    - `git stash list`用于查看储藏的工作内容列表
+    - `git stash apply || git stash pop`用于恢复储藏区的内容
+    - `git stash apply`恢复内容，但是不删除git stash的内容，需使用`git stash drop`来删除
+    - `git stash pop`恢复内容并删除储藏区内容
+#### OTHERS
+- `git remote -v`用于查看远程库信息
+- `git push origin <branchName>`用于推送分支修改，推送失败，使用`git pull`抓取远程有冲突的新提交
+- `git checkout -b <branchName> origin/<branchName>`用于在本地创建和远程仓库对应的分支，`branchName`最好一致
+- `git branch --upstream <branchName> origin/<branchName>`建立本地分支和远程分支的关联
