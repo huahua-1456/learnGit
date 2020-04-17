@@ -45,4 +45,4 @@
     - 首次连接远程仓库时需要进行ssh指纹信息验证
         - 本地gitbush输入命令`ssh -T git@github.com`，输入yes
     - 关联远程仓库`git remote add origin git@server-path/repository-name.git`
-    - 关联成功后首次使用`git push -u origin master`将本地文件添加至远程库
+    - 关联成功后首次使用`git push -u origin master`将本地文件添加至远程库2
