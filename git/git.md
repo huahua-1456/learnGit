@@ -46,3 +46,21 @@
         - 本地gitbush输入命令`ssh -T git@github.com`，输入yes
     - 关联远程仓库`git remote add origin git@server-path/repository-name.git`
     - 关联成功后首次使用`git push -u origin master`将本地文件添加至远程库
+    - [push相关问题解决](https://blog.csdn.net/huashao888/article/details/105564282)
+5. 从远程仓库clone项目
+    - `git clone url`命令可以从github远程仓库clone项目
+    - git支持多种协议，`https` `ssh` 
+    - `https`协议推送时需要每次输入口令，且速度较ssh慢
+    - `ssh`协议不需要每次输入口令，且速度最快
+#### 分支管理
+1. 创建合并分支
+    - `git branch <name> || git checkout -b <name>`都可以创建一个分支
+    - `git checkout -b <name>`表示创建一个分支，并切换到新创建的分支上**废弃**
+    - `git switch -c <branchName>`用于创建并切换到一个不存在的分支
+    - `git branch`命令可以列出所有分支，并在当前分支前面添加*号
+    - `git checkout <branchName> || git switch <branchName>(new)`用于切换分支，后者是新增方法
+    - `git merge <branchName>`用于合并分支，合并到当前分支`branchName`为被合并分支
+    - `git branch -d <branchName>`用于删除分支，分支被合并后可直接删除无用分支
+    *git鼓励大量使用分支（branch）*
+2. 分支合并冲突
+    - 当不同分支对同一个文件做了修改，且指针相同时，会出现冲突
